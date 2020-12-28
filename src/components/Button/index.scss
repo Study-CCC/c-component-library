@@ -1,0 +1,33 @@
+.btn {
+  color:$body-color;
+  font-size: $btn-font-size;
+  text-align: center;
+  white-space: nowrap;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-padding-x,$btn-padding-y,$btn-font-size,$btn-border-radius);
+  &.disabled,
+  &[disabled] {
+    opacity: $btn-disabled-opacity;
+    pointer-events: none;  // 禁用元素的 hover focus active
+  };
+}
+.btn-lg{
+  @include button-size($btn-padding-x-lg,$btn-padding-y-lg,$btn-font-size-lg,$btn-border-radius-lg)
+}
+.btn-sm{
+  @include button-size($btn-padding-x-sm,$btn-padding-y-sm,$btn-font-size-sm,$btn-border-radius-sm)
+}
+.btn-primary{
+  @include button-style($primary,$primary,$white)
+}
+.btn-danger {
+  @include button-style($danger, $danger, $white)
+}
+.btn-default {
+  @include button-style($white, $gray-400, $body-color, $white, $primary, $primary)
+}
+.btn-text {
+  color: $btn-link-color;
+  text-decoration: $link-decoration;
+  cursor: pointer;
+}
